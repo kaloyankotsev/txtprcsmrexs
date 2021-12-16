@@ -1,0 +1,20 @@
+function deserializeString(input = []){
+    let str = [];
+
+    for (let chr of input) {
+        if (chr != 'end') {
+            let line = chr.split(':');
+            let c = line[0];
+            let indexStr = ''; 
+            
+            indexStr = line[1];
+            let indexes = indexStr.split('/');
+
+            for (let i of indexes) {
+                str[i] = c;
+            }
+        }
+    }
+
+    console.log(str.join(''));
+}
